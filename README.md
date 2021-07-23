@@ -8,14 +8,14 @@ Genome-wide detection of human variants that disrupt intronic branchpoints *(LIC
 
 - Intronic branchpoint (BP) is recognized by spliceosome in the beginning of the splicing process, and constitutes a vulnerability of splicing by its potential mutations. BP mutations may potentially result in aberrant splicing consequences (exon skiping, intron retention), which could be deleterious.
 
-- We developed BPHunter as a genome-wide computational approach to systematically detect intronic variants that may disrupt BP recognition in NGS data, in an efficient and informative manner. Its single-line command that can be easily implemented into NGS analysis. We also provided a [BPHunter webserver](https://hgidsoft.rockefeller.edu/BPHunter) for users with less computational expertise.
+- We developed BPHunter as a genome-wide computational approach to systematically detect intronic variants that may disrupt BP recognition in NGS data, in an efficient and informative manner. Its single-line command that can be easily implemented into NGS analysis. We also provided a [BPHunter webserver](http://hgidsoft.rockefeller.edu/BPHunter) for users with less computational expertise.
 
 ## Usage
 ### Dependency
 The code is written in [python3](https://www.python.org/downloads/), and requires [bedtools](https://bedtools.readthedocs.io/en/latest/) installed.
 
 ### Reference datasets
-Due to the file size is limited at max. 25MB in GitHub, please download the [BPHunter reference datasets](https://hgidsoft.rockefeller.edu/BPHunter/reference_datasets.html) and put them into your BPHunter folder:
+Due to the file size is limited at max. 25MB in GitHub, please download the [BPHunter reference datasets](http://hgidsoft.rockefeller.edu/BPHunter/reference_datasets.html) and put them into your BPHunter folder:
 
 ### File Format
 **Input:** Variants in VCF format, with 5 mandatory and tab-delimited fields (CHROM, POS, ID, REF, ALT), where ID field will be ignored in running BPHunter.
