@@ -17,6 +17,7 @@ The code is written in [python3](https://www.python.org/downloads/), and require
 ### Reference datasets
 Due to the file size is limited at max. 25MB in GitHub, please download the [BPHunter reference datasets](http://hgidsoft.rockefeller.edu/BPHunter/reference_datasets.html) and put them into your BPHunter folder:
 
+- [data1](http://hgidsoft.rockefeller.edu/BPHunter/data/Data_BPHunter_hg19_Detection_Canonical.bed)
 ### File Format
 **Input:** Variants in VCF format, with 5 mandatory and tab-delimited fields (CHROM, POS, ID, REF, ALT), where ID field will be ignored in running BPHunter.
   - The 44 published pathogenic mutations are provided as the example of input data. *(Data_BPMut.vcf)*
