@@ -15,7 +15,7 @@ Genome-wide detection of human variants that disrupt intronic branchpoints *(LIC
 The code is written in [python3](https://www.python.org/downloads/), and requires [bedtools](https://bedtools.readthedocs.io/en/latest/) installed.
 
 ### Reference datasets
-Due to the file size is limited at max. 25MB in GitHub, please download the [BPHunter reference datasets](http://hgidsoft.rockefeller.edu/BPHunter/reference_datasets.html) and put them into your BPHunter folder:
+Due to the file size is limited at max. 25MB in GitHub, please download the [BPHunter reference datasets](http://hgidsoft.rockefeller.edu/BPHunter/reference_datasets.html) and put them into your BPHunter folder.
 
 ### File Format
 **Input:** Variants in VCF format, with 5 mandatory and tab-delimited fields (CHROM, POS, ID, REF, ALT), where ID field will be ignored in running BPHunter.
@@ -38,7 +38,7 @@ python BPHunter.py -i variants.vcf -g hg19/hg38 -c no/yes
 ### Parameters
 Parameter | Type | Description | Default
 ----------|------|-------------|--------------
-*-i*|file|variants in VCF format, with 5 fields (CHROM, POS, ID, REF, ALT)|N.A.
+*-i*|file|input variants in VCF file|N.A.
 *-g*|str|human reference genome assembly (hg19/hg38)|hg19
 *-c*|str|canonical transcripts? (no/yes)|no
 
