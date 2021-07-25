@@ -6,7 +6,7 @@ Genome-wide detection of human variants that disrupt intronic branchpoints *(LIC
 
 - RNA splicing, as a necessary step for protein-coding gene expression in eukaryotic cells, operates its spliceosome mostly within introns to define the exon-intron boundaries and hence the coding sequences. Introns probably harbor a substantially larger number of pathogenic mutations than has so far been appreciated. 
 
-- Intronic branchpoint (BP) is recognized by spliceosome in the beginning of the splicing process, and constitutes a vulnerability of splicing by its potential mutations. BP mutations may potentially result in aberrant splicing consequences (exon skiping, intron retention), which could be deleterious.
+- Intronic branchpoint (BP) is recognized by the spliceosome at the beginning of the splicing process, and constitutes a vulnerability of splicing by its potential mutations. BP mutations may potentially result in aberrant splicing consequences (exon skiping, intron retention), which could be deleterious.
 
 - We developed BPHunter as a genome-wide computational approach to systematically detect intronic variants that may disrupt BP recognition in NGS data, in an efficient and informative manner. Its single-line command that can be easily implemented into NGS analysis. We also provided a [BPHunter webserver](http://hgidsoft.rockefeller.edu/BPHunter) for users with less computational expertise.
 
