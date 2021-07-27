@@ -25,7 +25,7 @@ Due to the file size is limited at max. 25MB in GitHub, please download the [BPH
   - CHROM, POS, REF, ALT, STRAND, VAR_TYPE
   - GENE, BP_NAME, BP_TYPE, BP_RANK, HIT_POS, DIST_3SS
   - MAF, GERP, PHYLOP, ENERGY, CONSENSUS, EV_SCORE, SOURCE
-  - INTRON_TYPE, TRANSCRIPT_#INTRON
+  - INTRON_TYPE, TRANSCRIPT_INTRON#
 
 ### Command
 ```
