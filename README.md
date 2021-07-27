@@ -38,7 +38,7 @@ python BPHunter.py -i variants.vcf -g hg19/hg38 -c no/yes
 ### Parameters
 Parameter | Type | Description | Default
 ----------|------|-------------|--------------
-*-i*|file|input variants in VCF file|N.A.
+*-i*|file|input variants in VCF-format file|N.A.
 *-g*|str|human reference genome assembly (hg19/hg38)|hg19
 *-c*|str|canonical transcripts? (no/yes)|no
 
