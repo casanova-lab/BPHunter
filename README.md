@@ -19,7 +19,7 @@ Due to the file size is limited at max. 25MB in GitHub, please download the [BPH
 
 ### File Format
 **Input:** Variants in VCF format, with 5 mandatory and tab-delimited fields (CHROM, POS, ID, REF, ALT).
-  - The 56 published pathogenic mutations are provided as the example of input data. *(Data_BPMut.vcf)*
+  - The 56 published pathogenic mutations are provided as the example of input data. (Data_BPMut.vcf)
 
 **Output:** Variants detected by BPHunter that may disrupt BP thus splicing, with following annotation, in a file with surfix '.bphunter.out':
   - CHROM, POS, ID, REF, ALT, STRAND, VAR_TYPE
@@ -46,7 +46,7 @@ Parameter | Type | Description | Default
 - *Zhang P. et al.* Genome-wide detection of human variants that disrupt intronic branchpoints. (2021)
 
 ## Contact
-> **Author:** Peng Zhang, Ph.D.
+> **Developer:** Peng Zhang, Ph.D.
 
 > **Email:** pzhang@rockefeller.edu
 
