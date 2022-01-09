@@ -21,11 +21,9 @@ Due to the file size is limited at max. 25MB in GitHub, please download the [BPH
 **Input:** Variants in VCF format, with 5 mandatory and tab-delimited fields (CHROM, POS, ID, REF, ALT).
   - The 56 published pathogenic mutations are provided as the example of input data. (Data_BPMut.vcf)
 
-**Output:** Variants detected by BPHunter that may disrupt BP thus splicing, with following annotation, in a file with surfix '.bphunter.out':
-  - CHROM, POS, ID, REF, ALT, STRAND, VAR_TYPE
-  - GENE, BP_NAME, BP_RANK, HIT_POS, DIST_3SS
-  - MAF, GERP, PHYLOP, ENERGY, CONSENSUS, EVI, SOURCE
-  - IVS_TYPE, IVS_LENGTH, TRANSCRIPT_#INTRON
+**Output:** Variants detected by BPHunter that may disrupt BP thus splicing, in a file with surfix '.bphunter.out'. The output includes the following annotation.
+  - CHROM, POS, ID, REF, ALT (exactly the same as given by input)
+  - STRAND, VAR_TYPE, GENE, BP_NAME, BP_RANK, HIT_POS, DIST_3SS, MAF, GERP, PHYLOP, ENERGY, CONSENSUS, EVI, SOURCE, IVS_TYPE, IVS_LENGTH, TRANSCRIPT_#INTRON
 
 ### Command
 ```
