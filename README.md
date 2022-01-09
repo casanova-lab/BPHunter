@@ -22,7 +22,7 @@ Due to the file size is limited at max. 25MB in GitHub, please download the [BPH
   - The 56 published pathogenic mutations are provided as the example of input data. (Data_BPMut.vcf)
 
 **Output:** Variants detected by BPHunter that may disrupt BP thus splicing, in a file with surfix '.bphunter.out'. The output includes the following annotation.
-  - CHROM, POS, ID, REF, ALT (exactly the same as given by input)
+  - CHROM, POS, ID, REF, ALT (exactly the same as input)
   - STRAND, VAR_TYPE, GENE, BP_NAME, BP_RANK, HIT_POS, DIST_3SS, MAF, GERP, PHYLOP, ENERGY, CONSENSUS, EVI, SOURCE, IVS_TYPE, IVS_LENGTH, TRANSCRIPT_#INTRON
 
 ### Command
