@@ -1,5 +1,5 @@
 # BPHunter
-Genome-wide detection of human variants that disrupt intronic branchpoints *(LICENSE: CC BY-NC-ND 4.0)*
+Genome-wide detection of human variants that disrupt intronic branchpoints
 
 ## Introduction
 - The search for pathogenic candidate variants in next-generation sequencing (NGS) data typically focuses on non-synonymous variants within coding sequence or variants in essential splice sites, while mostly ignoring non-coding intronic variants. 
