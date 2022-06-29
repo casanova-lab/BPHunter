@@ -23,7 +23,7 @@ Due to the file size is limited at max. 25MB in GitHub, please download the [BPH
 
 **Output:** Variants detected by BPHunter that may disrupt BP thus splicing, in a file with suffix '.bphunter.txt'. The output includes the following annotation.
   - CHROM, POS, ID, REF, ALT (exactly the same as input)
-  - STRAND, VAR_TYPE, GENE, BP_NAME, BP_RANK, HIT_POS, BP_3SS_DIST, CONSENSUS, EVI, SOURCE_LIST, MAF, GERP, PHYLOP, IVS_TYPE, IVS_LENGTH, TRANSCRIPT_#IVS
+  - STRAND, VAR_TYPE, GENE, BP_NAME, BP_RANK, HIT_POS, BP_3SS_DIST, CONSENSUS, EVI, SOURCE_LIST, MAF, GERP, PHYLOP, IVS_TYPE, IVS_LENGTH, TRANSCRIPT_#IVS, BPHunter_SCORE
 
 ### Command
 ```
