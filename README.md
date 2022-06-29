@@ -40,6 +40,9 @@ Parameter | Type | Description | Default
 *-g*|str|human reference genome assembly (hg19/hg38)|hg19
 *-c*|str|canonical transcripts? (no/yes)|no
 
+### BPHunter Scoring Scheme
+<img src="https://hgidsoft.rockefeller.edu/BPHunter/image/BPHunter_Scoring.png" width="100%" height="100%">
+
 ## References
 - *Zhang P. et al.* Genome-wide detection of human variants that disrupt intronic branchpoints. (2021)
 
