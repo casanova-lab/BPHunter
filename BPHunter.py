@@ -27,7 +27,7 @@ canonical = args.canon
 filename = filename_vcf[0:filename_vcf.rfind('.')]
 filename_bed = filename+'.bed'
 filename_mapping = filename+'.bphunter.mapping'
-filename_out = filename+'.bphunter.txt'
+filename_out = filename+'.bphunter.out'
 
 if canonical == 'no':
     filename_bphunter_ref = 'Data_BPHunter_'+genome+'_detection_all.bed'
@@ -80,15 +80,18 @@ try:
     ###
     # overlapping the input variants with BPHunter reference data
     ###
-    os.system("bedtools intersect -wo -s -a " + filename_bed + " -b " + filename_bphunter_ref + " > " + filename_mapping)
+    os.system("bedtools intersect -wo -s -a " + filename_bed +
+              " -b " + filename_bphunter_ref + " > " + filename_mapping)
 
     ###
     # processing the variants overlapped with BPHunter
     ###
     file_mapping = open(filename_mapping, 'r')
     file_BPHunter_out = open(filename_out, 'w')
-    file_BPHunter_out.write('CHROM\tPOS\tID\tREF\tALT\tSTRAND\tVAR_TYPE\tGENE\tBP_NAME\tRANK\tHIT_POS\tDIST_3SS\t')
-    file_BPHunter_out.write('log10MAF\tGERP\tPHYLOP\tENERGY\tCONSENSUS\tEVI\tSOURCE\tIVS_TYPE\tIVS_LENGTH\tTRANSCRIPT_IVS\n')
+    file_BPHunter_out.write('CHROM\tPOS\tID\tREF\tALT\tSTRAND\tVAR_TYPE\tGENE\t')
+    file_BPHunter_out.write('BP_NAME\tRANK\tHIT_POS\tBP_3SS\tCONSENSUS\tEVI\tSOURCE_LIST\t')
+    file_BPHunter_out.write('BP_LOGMAF\tGP_GERP\tBP_PHYLOP\tBP2_LOGMAF\tBP2_GERP\tBP2_PHYLOP\t')
+    file_BPHunter_out.write('INTRON_TYPE\tINTRON_LENGTH\tTRANSCRIPT_INTRON\tBPHUNTER_SCORE\n')
 
     var_set = set()
     count_var_bp = 0
@@ -104,19 +107,23 @@ try:
         bp_motif_start = int(item[8])
         bp_motif_end = int(item[9])
         bp_name = item[10]
-        evi = item[11]
-        source = item[13]
+        bp_evi = item[11]
+        bp_source = item[13]
         gene = item[14]
         transcript_intron = item[15]
-        intron_type = item[16]
-        intron_length = item[17]
+        intron_length = item[16]
+        intron_type = item[17]
         dist_3ss = item[18]
         rank = item[19]
-        energy = item[20]
-        consensus = item[21]
-        maf = item[22]
-        gerp = item[23]
-        phylop = item[24]
+        consensus = item[20]
+        energy = item[21]
+        bp_logmaf = item[22]
+        bp_gerp = item[23]
+        bp_phylop = item[24]
+        bp2_logmaf = item[25]
+        bp2_gerp = item[26]
+        bp2_phylop = item[27]
+        overlap = item[28]
 
         var_info_list = var_name.split('*')
         var_pos = var_info_list[1]
@@ -140,11 +147,62 @@ try:
         hit_pos_list.sort()
         hit_pos = '|'.join([str(i) for i in hit_pos_list])
 
-        BPHunter_output = chrom+'\t'+var_pos+'\t'+var_id+'\t'+var_ref+'\t'+var_alt+'\t'+strand+'\t'+var_type+'\t'
-        BPHunter_output += gene+'\t'+bp_name+'\t'+rank+'\t'+hit_pos+'\t'+dist_3ss+'\t'
-        BPHunter_output += maf+'\t'+gerp+'\t'+phylop+'\t'+energy+'\t'+consensus+'\t'+evi+'\t'+source+'\t'
-        BPHunter_output += intron_type+'\t'+intron_length+'\t'+transcript_intron
+        BPHunter_score = 0
+        if rank == '#1/1':
+            BPHunter_score += 1
+        if '#1' in rank:
+            BPHunter_score += 1
+        if '1:' in consensus:
+            BPHunter_score += 1
+        if int(bp_evi) > 1:
+            BPHunter_score += 1
+
+        if 0 in hit_pos_list:
+            if bp_logmaf == '.':
+                BPHunter_score += 1
+            else:
+                try:
+                    if int(bp_logmaf) < -2:
+                        BPHunter_score += 1
+                except:
+                    pass
+            try:
+                if float(bp_gerp) > 0:
+                    BPHunter_score += 1
+            except:
+                pass
+            try:
+                if float(bp_phylop) > 0:
+                    BPHunter_score += 1
+            except:
+                pass
+
+        if -2 in hit_pos_list:
+            if bp2_logmaf == '.':
+                BPHunter_score += 1
+            else:
+                try:
+                    if int(bp2_logmaf) < -2:
+                        BPHunter_score += 1
+                except:
+                    pass
+            try:
+                if float(bp2_gerp) > 0:
+                    BPHunter_score += 1
+            except:
+                pass
+            try:
+                if float(bp2_phylop) > 0:
+                    BPHunter_score += 1
+            except:
+                pass
+
+        BPHunter_output = chrom+'\t'+var_pos+'\t'+var_id+'\t'+var_ref+'\t'+var_alt+'\t'+strand+'\t'+var_type+'\t'+gene+'\t'
+        BPHunter_output += bp_name+'\t'+rank+'\t'+hit_pos+'\t'+dist_3ss+'\t'+consensus+'\t'+bp_evi+'\t'+bp_source+'\t'
+        BPHunter_output += bp_logmaf+'\t'+bp_gerp+'\t'+bp_phylop+'\t'+bp2_logmaf+'\t'+bp2_gerp+'\t'+bp2_phylop+'\t'
+        BPHunter_output += intron_type+'\t'+intron_length+'\t'+transcript_intron+'\t'+str(BPHunter_score)
         file_BPHunter_out.write(BPHunter_output + '\n')
+
         var_set.add(var_name)
         count_var_bp += 1
 
