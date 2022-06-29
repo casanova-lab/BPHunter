@@ -41,7 +41,7 @@ Parameter | Type | Description | Default
 *-c*|str|canonical transcripts? (no/yes)|no
 
 ### BPHunter Scoring Scheme
-<img src="https://hgidsoft.rockefeller.edu/BPHunter/img/BPHunter_Scoring.png" width="50%" height="50%">
+<img src="https://hgidsoft.rockefeller.edu/BPHunter/img/BPHunter_Scoring.png" width="70%" height="70%">
 
 ## References
 - *Zhang P. et al.* Genome-wide detection of human variants that disrupt intronic branchpoints. (2021)
