@@ -41,8 +41,8 @@ Parameter | Type | Description | Default
 *-c*|str|canonical transcripts? (no/yes)|no
 
 ### BPHunter Scoring Scheme
-<img src="https://hgidsoft.rockefeller.edu/BPHunter/img/BPHunter_Scoring.png" width="70%" height="70%">
 <!--START_SECTION:update_image-->
+<img src="https://hgidsoft.rockefeller.edu/BPHunter/img/BPHunter_Scoring.png" width="60%" height="60%">
 <!--END_SECTION:update_image-->
 
 ## References
