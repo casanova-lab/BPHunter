@@ -2,7 +2,7 @@
 Genome-wide detection of human variants that disrupt intronic branchpoints
 
 ## Introduction
-- The search for pathogenic candidate variants in next-generation sequencing (NGS) data typically focuses on non-synonymous variants within coding sequence or variants in essential splice sites, while mostly ignoring non-coding intronic variants. 
+- The search for pathogenic candidate variants in massive parallel sequencing (MPS) or next-generation sequencing (NGS) data typically focuses on non-synonymous variants within coding sequence or variants in essential splice sites, while mostly ignoring non-coding intronic variants. 
 
 - RNA splicing, as a necessary step for protein-coding gene expression in eukaryotic cells, operates its spliceosome mostly within introns to define the exon-intron boundaries and hence the coding sequences. Introns probably harbor a substantially larger number of pathogenic mutations than has so far been appreciated. 
 
