@@ -4,22 +4,22 @@ Genome-wide detection of human variants that disrupt intronic branchpoints
 ## Introduction
 - The search for pathogenic candidate variants in massive parallel sequencing (MPS) or next-generation sequencing (NGS) data typically focuses on non-synonymous variants within coding sequence or variants in essential splice sites, while mostly ignoring non-coding intronic variants. 
 
-- RNA splicing, as a necessary step for protein-coding gene expression in eukaryotic cells, operates its spliceosome mostly within introns to define the exon-intron boundaries and hence the coding sequences. Introns probably harbor a substantially larger number of pathogenic mutations than has so far been appreciated. 
+- RNA splicing, as a necessary step for protein-coding gene expression in eukaryotic cells, operates its spliceosome mostly within introns to define the exon-intron boundaries and hence the coding sequences. Introns probably harbor a substantially larger number of pathogenic variants than has so far been appreciated. 
 
-- Intronic branchpoint (BP) is recognized by spliceosome in the beginning of the splicing process, and constitutes a vulnerability of splicing by its potential mutations. BP mutations may potentially result in aberrant splicing consequences (exon skipping, intron retention), which could be deleterious to the gene product.
+- Intronic branchpoint (BP) is recognized by spliceosome in the beginning of the splicing process, and constitutes a vulnerability of splicing by its potential variants. BP variants may potentially result in aberrant splicing consequences (exon skipping, intron retention), which could be deleterious to the gene product.
 
-- BPHunter is a genome-wide computational approach to systematically detect intronic variants that may disrupt BP recognition in NGS data, in an efficient, systematic and informative manner. Its single-line command that can be easily implemented into NGS analysis. We also provided a [BPHunter webserver](http://hgidsoft.rockefeller.edu/BPHunter) for users with less computational expertise.
+- BPHunter is a genome-wide computational approach to systematically detect intronic variants that may disrupt BP recognition, in an efficient, systematic and informative manner. Its single-line command that can be easily implemented into NGS analysis. We also provided a [BPHunter webserver](http://hgidsoft.rockefeller.edu/BPHunter) for users with less computational expertise.
 
 ## Usage
 ### Dependency
 The code is written in [python3](https://www.python.org/downloads/), and requires [bedtools](https://bedtools.readthedocs.io/en/latest/) installed.
 
 ### Reference datasets
-Due to the file size is limited at max. 25MB in GitHub, please download the [BPHunter reference datasets](http://hgidsoft.rockefeller.edu/BPHunter/standalone.html) and put them into your BPHunter folder.
+Due to the file size limit in GitHub, please download the [BPHunter reference datasets](http://hgidsoft.rockefeller.edu/BPHunter/standalone.html) and put them into your BPHunter folder.
 
 ### File Format
 **Input:** Variants in VCF format, with 5 mandatory and tab-delimited fields (CHROM, POS, ID, REF, ALT).
-  - The 48 published pathogenic mutations are provided as the example of input data. (Data_BPMut.vcf)
+  - The 48 published pathogenic BP variants are provided as the example of input data. (Data_BPvar.vcf)
 
 **Output:** Variants detected by BPHunter that may disrupt BP thus splicing, in a file with suffix '.bphunter.txt'. The output includes the following annotation.
   - CHROM, POS, ID, REF, ALT (exactly the same as input)
@@ -41,7 +41,7 @@ Parameter | Type | Description | Default
 *-c*|str|canonical transcripts? (no/yes)|no
 
 ### BPHunter Scoring Scheme
-<img src="https://hgidsoft.rockefeller.edu/BPHunter/img/BPHunter_Score.png" width="60%" height="60%">
+<img src="https://hgidsoft.rockefeller.edu/BPHunter/data/BPHunter_Scoring.png" width="60%" height="60%">
 
 ## References
 - *Zhang P. et al.* Genome-wide detection of human variants that disrupt intronic branchpoints. (2022)
