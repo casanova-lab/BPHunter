@@ -16,7 +16,8 @@ Genome-wide detection of human variants that disrupt intronic branchpoints
 - Our paper "Genome-wide detection of human variants that disrupt intronic branchpoints" that introduces BPHunter was published in PNAS on Oct 2022.
 - BPHunter official version-2 was released on Feb 2023, using the latest gene annocations from the GENCODE database. We also added a program for processing VCF files in batch, and added an output parameter 'BPHunter_HIGHRISK' (YES/NO) for identifying more promising candidate variants.
 
-## Usage (current version: version 1)
+## Usage 
+Current version: version 1
 ### Dependency
 The code is written in [python3](https://www.python.org/downloads/), and requires [bedtools](https://bedtools.readthedocs.io/en/latest/) installed.
 
