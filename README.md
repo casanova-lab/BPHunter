@@ -49,7 +49,7 @@ Parameter | Type | Description | Default
 <img src="https://hgidsoft.rockefeller.edu/BPHunter/data/BPHunter_Scoring.png" width="70%" height="70%">
 
 ## References
-- *Zhang P. et al.* Genome-wide detection of human variants that disrupt intronic branchpoints. (2022)
+- *Zhang P. et al.* Genome-wide detection of human variants that disrupt intronic branchpoints. PNAS. 119(44):e2211194119. (2022) [PNAS](https://www.pnas.org/doi/10.1073/pnas.2211194119) [PubMed](https://pubmed.ncbi.nlm.nih.gov/36306325)
 
 ## Contact
 > **Developer:** Peng Zhang, Ph.D.
