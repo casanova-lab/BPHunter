@@ -17,14 +17,14 @@ Genome-wide detection of human variants that disrupt intronic branchpoints
 - BPHunter official version-2 was released on Feb 2023, using the latest gene annocations from the GENCODE database. We also added a program for processing VCF files in batch, and added an output parameter 'BPHunter_HIGHRISK' (YES/NO) for identifying more promising candidate variants.
 
 ## Usage 
-Current version: version 2
+Current version: version-2
 ### Dependency
 The code is written in [python3](https://www.python.org/downloads/), and requires [bedtools](https://bedtools.readthedocs.io/en/latest/) installed.
 
 ### Reference datasets
 Due to the file size limit in GitHub, please download the [BPHunter reference datasets](http://hgidsoft.rockefeller.edu/BPHunter/standalone.html) and put them into your BPHunter folder.
 
-To use the latest version 2, please download and replace the reference datasets.
+To use the latest version-2, please download and replace the reference datasets.
 
 ### File Format
 **Input:** Variants in VCF format, with 5 mandatory and tab-delimited fields (CHROM, POS, ID, REF, ALT).
@@ -33,22 +33,22 @@ To use the latest version 2, please download and replace the reference datasets.
 **Output:** BPHunter-detected variants will be output with the following annotation.
   - SAMPLE (only for BPHunter_VCF_batch.py)
   - CHROM, POS, ID, REF, ALT (exactly the same as input)
-  - STRAND
-  - VAR_TYPE
-  - GENE
-  - TRANSCRIPT_IVS
-  - CANONICAL
-  - BP_NAME
-  - BP_ACC_DIST
-  - BP_RANK
-  - BP_TOTAL
-  - BP_HIT
-  - BP_SOURCE
-  - CONSENSUS
-  - BP/BP2_GERP
-  - BP/BP2_PHYL
-  - BPHunter_HIGHRISK
-  - BPHunter_SCORE
+  - STRAND: +/-
+  - VAR_TYPE: snv, x-nt del, x-nt ins
+  - GENE: gene symbol
+  - TRANSCRIPT_IVS: ENST12345678_IVS9
+  - CANONICAL: canonical transcript_IVS, or '.'
+  - BP_NAME: m/e/cBP_chrom_pos_strand_nucleotide
+  - BP_ACC_DIST: distance from BP to acceptor site
+  - BP_RANK: the rank of BP in this intron
+  - BP_TOTAL: the total number of BP in this intron
+  - BP_HIT: the BP position (-2|-1|0) hit by the variant 
+  - BP_SOURCE: the number of source supporting this BP position
+  - CONSENSUS: the level of consensus (1:YTNAY, 2:YTNA, 3:TNA, 4:YNA, 0:none)
+  - BP/BP2_GERP: conservation score GERP for BP and BP-2 positions
+  - BP/BP2_PHYL: conservation score PHYLOP for BP and BP-2 positions
+  - BPHunter_HIGHRISK: YES/NO if a BP variant considered as high-risk
+  - BPHunter_SCORE: score of a BP variant (suggested cutoff >=3, max=10)
 
 ### Command & Parameters (BPHunter_VCF.py)
 ```
