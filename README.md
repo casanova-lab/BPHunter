@@ -74,7 +74,7 @@ python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.txt -g GRCh37/G
 Parameter | Type | Description | Default
 ----------|------|-------------|--------------
 *-d*|str|directory of VCF files|N.A.
-*-s*|file|sample list to be screened in the above directory|N.A.
+*-s*|file|sample list (without .vcf extension) to be screened in the above directory|N.A.
 *-o*|str|output filename|N.A.
 *-g*|str|human reference genome assembly (GRCh37/GRCh38)|GRCh37
 *-t*|str|all/canonical transcripts?|all
