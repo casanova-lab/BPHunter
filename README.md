@@ -36,7 +36,7 @@ To use the latest version-2, please download and replace the reference datasets.
   - STRAND: +/-
   - VAR_TYPE: snv, x-nt del, x-nt ins
   - GENE: gene symbol
-  - TRANSCRIPT_IVS: ENST12345678_IVS9
+  - TRANSCRIPT_IVS: ENST123456789_IVS10
   - CANONICAL: canonical transcript_IVS, or '.'
   - BP_NAME: m/e/cBP_chrom_pos_strand_nucleotide
   - BP_ACC_DIST: distance from BP to acceptor site
