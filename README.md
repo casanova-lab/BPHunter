@@ -44,8 +44,8 @@ To use the latest version 2, please download and replace the reference datasets.
   - BP_HIT
   - BP_SOURCE
   - CONSENSUS
-  - GERP
-  - PHYL
+  - BP/BP2_GERP
+  - BP/BP2_PHYL
   - BPHunter_HIGHRISK
   - BPHunter_SCORE
 
@@ -60,8 +60,8 @@ python BPHunter_VCF.py -i variants.vcf -g GRCh37/GRCh38 -t all/canonical
 Parameter | Type | Description | Default
 ----------|------|-------------|--------------
 *-i*|file|variants in VCF format, with 5 fields (CHROM, POS, ID, REF, ALT)|N.A.
-*-g*|str|human reference genome assembly (GRCh37/GRCh38)|GRCh37
-*-t*|str|all/canonical transcripts?|all
+*-g*|str|human reference genome assembly (GRCh37 / GRCh38)|GRCh37
+*-t*|str|all / canonical transcripts?|all
 
 ### Command & Parameters (BPHunter_VCF_batch.py)
 ```
@@ -76,8 +76,8 @@ Parameter | Type | Description | Default
 *-d*|str|directory of VCF files|N.A.
 *-s*|file|sample list (without .vcf extension) to be screened in the above directory|N.A.
 *-o*|str|output filename|N.A.
-*-g*|str|human reference genome assembly (GRCh37/GRCh38)|GRCh37
-*-t*|str|all/canonical transcripts?|all
+*-g*|str|human reference genome assembly (GRCh37 / GRCh38)|GRCh37
+*-t*|str|all / canonical transcripts?|all
 
 ### BPHunter Scoring Scheme
 <img src="https://hgidsoft.rockefeller.edu/BPHunter/data/BPHunter_Scoring.png" width="70%" height="70%">
