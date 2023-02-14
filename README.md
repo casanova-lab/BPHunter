@@ -23,6 +23,7 @@ The code is written in [python3](https://www.python.org/downloads/), and require
 
 ### Reference datasets
 Due to the file size limit in GitHub, please download the [BPHunter reference datasets](http://hgidsoft.rockefeller.edu/BPHunter/standalone.html) and put them into your BPHunter folder.
+
 To use the latest version 2, please download and replace the reference datasets.
 
 ### File Format
