@@ -30,7 +30,7 @@ To use the latest version-2, please download and replace the reference datasets.
 **Input:** Variants in VCF format, with 5 mandatory and tab-delimited fields (CHROM, POS, ID, REF, ALT).
   - The 48 published pathogenic BP variants are provided as the example input. (Example_var_BP.vcf)
 
-**Output:** BPHunter-detected variants will be output with the following annotation.
+**Output:** BPHunter-detected variants will be output with the following annotations.
   - SAMPLE (only for BPHunter_VCF_batch.py)
   - CHROM, POS, ID, REF, ALT (exactly the same as input)
   - STRAND: +/-
@@ -40,11 +40,11 @@ To use the latest version-2, please download and replace the reference datasets.
   - CANONICAL: canonical transcript_IVS, or '.'
   - BP_NAME: m/e/cBP_chrom_pos_strand_nucleotide
   - BP_ACC_DIST: distance from BP to acceptor site
-  - BP_RANK: the rank of BP in this intron
-  - BP_TOTAL: the total number of BP in this intron
-  - BP_HIT: the BP position (-2|-1|0) hit by the variant 
-  - BP_SOURCE: the number of source supporting this BP position
-  - CONSENSUS: the level of consensus (1:YTNAY, 2:YTNA, 3:TNA, 4:YNA, 0:none)
+  - BP_RANK: rank of BP in this intron
+  - BP_TOTAL: total number of BP in this intron
+  - BP_HIT: BP position (-2, -1, 0) hit by the variant 
+  - BP_SOURCE: number of sources supporting this BP position
+  - CONSENSUS: level of consensus (1:YTNAY, 2:YTNA, 3:TNA, 4:YNA, 0:none)
   - BP/BP2_GERP: conservation score GERP for BP and BP-2 positions
   - BP/BP2_PHYL: conservation score PHYLOP for BP and BP-2 positions
   - BPHunter_HIGHRISK: YES/NO if a BP variant considered as high-risk
