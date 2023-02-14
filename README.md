@@ -17,35 +17,69 @@ Genome-wide detection of human variants that disrupt intronic branchpoints
 - BPHunter official version-2 was released on Feb 2023, using the latest gene annocations from the GENCODE database. We also added a program for processing VCF files in batch, and added an output parameter 'BPHunter_HIGHRISK' (YES/NO) for identifying more promising candidate variants.
 
 ## Usage 
-Current version: version 1
+Current version: version 2
 ### Dependency
 The code is written in [python3](https://www.python.org/downloads/), and requires [bedtools](https://bedtools.readthedocs.io/en/latest/) installed.
 
 ### Reference datasets
 Due to the file size limit in GitHub, please download the [BPHunter reference datasets](http://hgidsoft.rockefeller.edu/BPHunter/standalone.html) and put them into your BPHunter folder.
+To use the latest version 2, please download and replace the reference datasets.
 
 ### File Format
 **Input:** Variants in VCF format, with 5 mandatory and tab-delimited fields (CHROM, POS, ID, REF, ALT).
-  - The 48 published pathogenic BP variants are provided as the example of input data. (Data_BPvar.vcf)
+  - The 48 published pathogenic BP variants are provided as the example input. (Example_var_BP.vcf)
 
-**Output:** Variants detected by BPHunter that may disrupt BP thus splicing, in a file with suffix '.bphunter.txt'. The output includes the following annotation.
+**Output:** BPHunter-detected variants will be output with the following annotation.
+  - SAMPLE (only for BPHunter_VCF_batch.py)
   - CHROM, POS, ID, REF, ALT (exactly the same as input)
-  - STRAND, VAR_TYPE, GENE, BP_NAME, BP_RANK, HIT_POS, BP_3SS_DIST, CONSENSUS, EVI, SOURCE_LIST, MAF, GERP, PHYLOP, IVS_TYPE, IVS_LENGTH, TRANSCRIPT_#IVS, BPHunter_SCORE
+  - STRAND
+  - VAR_TYPE
+  - GENE
+  - TRANSCRIPT_IVS
+  - CANONICAL
+  - BP_NAME
+  - BP_ACC_DIST
+  - BP_RANK
+  - BP_TOTAL
+  - BP_HIT
+  - BP_SOURCE
+  - CONSENSUS
+  - GERP
+  - PHYL
+  - BPHunter_HIGHRISK
+  - BPHunter_SCORE
 
-### Command
+### Command (BPHunter_VCF.py)
 ```
-python BPHunter.py -i variants.vcf
+python BPHunter_VCF.py -i variants.vcf
 ```
 ```
-python BPHunter.py -i variants.vcf -g hg19/hg38 -c no/yes
+python BPHunter_VCF.py -i variants.vcf -g GRCh37/GRCh38 -t all/canonical
 ```
 
-### Parameters
+### Parameters (BPHunter_VCF.py)
 Parameter | Type | Description | Default
 ----------|------|-------------|--------------
 *-i*|file|variants in VCF format, with 5 fields (CHROM, POS, ID, REF, ALT)|N.A.
-*-g*|str|human reference genome assembly (hg19/hg38)|hg19
-*-c*|str|canonical transcripts? (no/yes)|no
+*-g*|str|human reference genome assembly (GRCh37/GRCh38)|GRCh37
+*-t*|str|all/canonical transcripts?|all
+
+### Command (BPHunter_VCF_batch.py)
+```
+python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.txt
+```
+```
+python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.txt -g GRCh37/GRCh38 -t all/canonical
+```
+
+### Parameters (BPHunter_VCF.py)
+Parameter | Type | Description | Default
+----------|------|-------------|--------------
+*-d*|str|directory of VCF files|N.A.
+*-s*|file|sample list to be screened in the above directory|N.A.
+*-o*|str|output filename|N.A.
+*-g*|str|human reference genome assembly (GRCh37/GRCh38)|GRCh37
+*-t*|str|all/canonical transcripts?|all
 
 ### BPHunter Scoring Scheme
 <img src="https://hgidsoft.rockefeller.edu/BPHunter/data/BPHunter_Scoring.png" width="70%" height="70%">
