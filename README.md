@@ -49,7 +49,7 @@ To use the latest version 2, please download and replace the reference datasets.
   - BPHunter_HIGHRISK
   - BPHunter_SCORE
 
-### Command (BPHunter_VCF.py)
+### Command & Parameters (BPHunter_VCF.py)
 ```
 python BPHunter_VCF.py -i variants.vcf
 ```
@@ -57,14 +57,13 @@ python BPHunter_VCF.py -i variants.vcf
 python BPHunter_VCF.py -i variants.vcf -g GRCh37/GRCh38 -t all/canonical
 ```
 
-### Parameters (BPHunter_VCF.py)
 Parameter | Type | Description | Default
 ----------|------|-------------|--------------
 *-i*|file|variants in VCF format, with 5 fields (CHROM, POS, ID, REF, ALT)|N.A.
 *-g*|str|human reference genome assembly (GRCh37/GRCh38)|GRCh37
 *-t*|str|all/canonical transcripts?|all
 
-### Command (BPHunter_VCF_batch.py)
+### Command & Parameters (BPHunter_VCF_batch.py)
 ```
 python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.txt
 ```
@@ -72,7 +71,6 @@ python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.txt
 python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.txt -g GRCh37/GRCh38 -t all/canonical
 ```
 
-### Parameters (BPHunter_VCF.py)
 Parameter | Type | Description | Default
 ----------|------|-------------|--------------
 *-d*|str|directory of VCF files|N.A.
