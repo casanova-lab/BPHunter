@@ -1,4 +1,4 @@
-# BPHunter [UPDATING NOW]
+# BPHunter
 Genome-wide detection of human variants that disrupt intronic branchpoints
 
 ## Introduction
@@ -48,7 +48,7 @@ To use the latest version-2, please download and replace the reference datasets.
   - BP/BP2_GERP: conservation score GERP for BP and BP-2 positions
   - BP/BP2_PHYL: conservation score PHYLOP for BP and BP-2 positions
   - BPHunter_HIGHRISK: YES/NO if a BP variant considered as high-risk
-  - BPHunter_SCORE: score of a BP variant (suggested cutoff >=3, max=10)
+  - BPHunter_SCORE: score of a BP variant (suggested cutoff>=3, max=10)
 
 ### Command & Parameters (BPHunter_VCF.py)
 ```
