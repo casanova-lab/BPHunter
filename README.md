@@ -11,10 +11,11 @@ Genome-wide detection of human variants that disrupt intronic branchpoints
 - BPHunter is a genome-wide computational approach to systematically detect intronic variants that may disrupt BP recognition, in an efficient, systematic and informative manner. Its single-line command that can be easily implemented into NGS analysis. We also provided a [BPHunter webserver](http://hgidsoft.rockefeller.edu/BPHunter) with user-friendly interface.
 
 ## News
-- June 2021: BPHunter prototype (webserver & github) was launched.
+- Feb 2023: BPHunter official version-2 was released, with an additional program for processing VCF files in batch, and an additional output parameter 'BPHunter_HIGHRISK' (YES/NO) for identifying more promising candidate variants.
+- Oct 2022: "Genome-wide detection of human variants that disrupt intronic branchpoints" that introduces BPHunter was published in PNAS.
 - Aug 2022: BPHunter official version-1 was released.
-- Oct 2022: Our paper "Genome-wide detection of human variants that disrupt intronic branchpoints" that introduces BPHunter was published in PNAS.
-- Feb 2023: BPHunter official version-2 was released, using the latest gene annocations from the GENCODE database. We also added a program for processing VCF files in batch, and added an output parameter 'BPHunter_HIGHRISK' (YES/NO) for identifying more promising candidate variants.
+- Jun 2021: BPHunter webserver & github were launched.
+- Dec 2020: BPHunter prototype was completed.
 
 ## Usage 
 Current version: version-2
