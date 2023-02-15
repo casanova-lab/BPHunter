@@ -56,7 +56,7 @@ To use the latest version-2, please download and replace the reference datasets.
 python BPHunter_VCF.py -i variants.vcf
 ```
 ```
-python BPHunter_VCF.py -i variants.vcf -g GRCh37/GRCh38 -t all/canonical
+python BPHunter_VCF.py -i variants.vcf -g GRCh37 -t all
 ```
 
 Parameter | Type | Description | Default
@@ -70,7 +70,7 @@ Parameter | Type | Description | Default
 python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.txt
 ```
 ```
-python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.txt -g GRCh37/GRCh38 -t all/canonical
+python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.txt -g GRCh37 -t all
 ```
 
 Parameter | Type | Description | Default
