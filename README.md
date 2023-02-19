@@ -8,7 +8,7 @@ Genome-wide detection of human variants that disrupt intronic branchpoints
 
 - Intronic branchpoint (BP) is recognized by spliceosome in the beginning of the splicing process, and constitutes a vulnerability of splicing by its potential variants. BP variants may potentially result in aberrant splicing consequences (exon skipping, intron retention), which could be deleterious to the gene product.
 
-- BPHunter is a genome-wide computational approach to systematically detect intronic variants that may disrupt BP recognition, in an efficient, systematic and informative manner. Its single-line command that can be easily implemented into NGS analysis. We also provided a [BPHunter webserver](http://hgidsoft.rockefeller.edu/BPHunter) with user-friendly interface.
+- BPHunter is a genome-wide computational approach to systematically detect intronic variants that may disrupt BP recognition, efficiently and informatively. This standalone version can be easily implemented into NGS analysis by a one-line command. We also provided a [BPHunter webserver](http://hgidsoft.rockefeller.edu/BPHunter) with user-friendly interface.
 
 ## News
 - Feb 2023: BPHunter official version-2 was released, with an additional program for processing VCF files in batch, and an additional output parameter 'BPHunter_HIGHRISK' (YES/NO) for identifying more promising candidate variants.
