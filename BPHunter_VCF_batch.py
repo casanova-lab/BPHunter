@@ -27,7 +27,7 @@ print('**********************************************************\n')
 parser = argparse.ArgumentParser(description="BPHunter")
 parser.add_argument("-d", "--dir", help="directory of vcf files")
 parser.add_argument("-s", "--sample", help="sample list")
-parser.add_argument("-o", "--output", help="output filename, tab-delimited")
+parser.add_argument("-o", "--output", help="output CSV filename, comma-delimited")
 parser.add_argument("-g", "--genome_ref", type=str, default='GRCh37', choices=['GRCh37', 'GRCh38'],
                     help="Human reference genome assembly")
 parser.add_argument("-t", "--transcript_ref", type=str, default='all', choices=['all', 'canonical'],
@@ -46,9 +46,9 @@ else:
     filename_BPHunter_detection = 'Data_BPHunter_'+genome_ref+'_detection_canonical.bed'
 
 file_out = open(filename_output, 'w')
-file_out.write('SAMPLE\tCHROM\tPOS\tID\tREF\tALT\tSTRAND\tVAR_TYPE\tGENE\tTRANSCRIPT_IVS\tCANONICAL\t'
-               'BP_NAME\tBP_ACC\tBP_RANK\tBP_TOTAL\tBP_HIT\tBP_SOURCE\tCONSENSUS\t'
-               'BP_GERP\tBP_PHYL\t\tBP2_GERP\tBP2_PHYL\tBPHUNTER_HIGHRISK\tBPHUNTER_SCORE\n')
+file_out.write('SAMPLE,CHROM,POS,ID,REF,ALT,STRAND,VAR_TYPE,GENE,TRANSCRIPT_IVS,CANONICAL,'
+               'BP_NAME,BP_ACC,BP_RANK,BP_TOTAL,BP_HIT,BP_SOURCE,CONSENSUS,'
+               'BP_GERP,BP_PHYL,BP2_GERP,BP2_PHYL,BPHUNTER_HIGHRISK,BPHUNTER_SCORE\n')
 
 ###
 # BPHunter MAIN
@@ -219,10 +219,10 @@ for eachsample in file_sample:
                                 BPHunter_highrisk = 'YES'
                                 BPHunter_var_highrisk_count += 1
 
-                    output = sample+'\t'+chrom+'\t'+var_pos+'\t'+var_id+'\t'+var_ref+'\t'+var_alt+'\t'+strand+'\t'+var_type+'\t'+\
-                             gene+'\t'+transcript_ivs+'\t'+canonical+'\t'+bp_name+'\t'+bp_acc+'\t'+bp_rank+'\t'+bp_total+'\t'+\
-                             bp_hit+'\t'+bp_source+'\t'+consensus+'\t'+bp_gerp+'\t'+bp_phyl+'\t'+bp2_gerp+'\t'+bp2_phyl+'\t'+\
-                             BPHunter_highrisk+'\t'+str(BPHunter_score)
+                    output = sample+','+chrom+','+var_pos+','+var_id+','+var_ref+','+var_alt+','+strand+','+var_type+','+\
+                             gene+','+transcript_ivs+','+canonical+','+bp_name+','+bp_acc+','+bp_rank+','+bp_total+','+\
+                             bp_hit+','+bp_source+','+consensus+','+bp_gerp+','+bp_phyl+','+bp2_gerp+','+bp2_phyl+','+\
+                             BPHunter_highrisk+','+str(BPHunter_score)
                     file_out.write(output + '\n')
 
             except:
