@@ -2,16 +2,16 @@
 Genome-wide detection of human variants that disrupt intronic branchpoints
 
 ## Introduction
-- The search for pathogenic candidate variants in massive parallel sequencing (MPS) or next-generation sequencing (NGS) data typically focuses on non-synonymous variants within coding sequence or variants in essential splice sites, while mostly ignoring non-coding intronic variants. 
+- The search for pathogenic candidate variants in massive parallel sequencing (MPS) or next-generation sequencing (NGS) data typically focuses on non-synonymous variants within coding sequences or variants in essential splice sites, while mostly ignoring non-coding intronic variants. 
 
 - RNA splicing, as a necessary step for protein-coding gene expression in eukaryotic cells, operates its spliceosome mostly within introns to define the exon-intron boundaries and hence the coding sequences. Introns probably harbor a substantially larger number of pathogenic variants than has so far been appreciated. 
 
 - Intronic branchpoint (BP) is recognized by spliceosome in the beginning of the splicing process, and constitutes a vulnerability of splicing by its potential variants. BP variants may potentially result in aberrant splicing consequences (exon skipping, intron retention), which could be deleterious to the gene product.
 
-- BPHunter is a genome-wide computational approach to systematically detect intronic variants that may disrupt BP recognition, efficiently and informatively. This standalone version can be easily implemented into NGS analysis by a one-line command. We also provided a [BPHunter webserver](http://hgidsoft.rockefeller.edu/BPHunter) with user-friendly interface.
+- BPHunter is a genome-wide computational approach to systematically detect intronic variants that may disrupt BP recognition, efficiently and informatively. This standalone version can be easily implemented into NGS analysis by a one-line command. We also provided a [BPHunter webserver](http://hgidsoft.rockefeller.edu/BPHunter) with a user-friendly interface.
 
 ## News
-- Feb 2023: BPHunter official version-2 was released, with an additional program for processing VCF files in batch, and an additional output parameter 'BPHunter_HIGHRISK' (YES/NO) for identifying more promising candidate variants.
+- Feb 2023: BPHunter official version-2 was released, with an additional program for processing VCF files in batch, and an additional output parameter 'BPHunter_HIGHRISK' (YES/NO) for labeling more promising candidate variants.
 - Oct 2022: "Genome-wide detection of human variants that disrupt intronic branchpoints" that introduces BPHunter was published in PNAS.
 - Aug 2022: BPHunter official version-1 was released.
 - Jun 2021: BPHunter webserver & github were launched.
@@ -40,7 +40,7 @@ To use the latest version-2, please download and replace the reference datasets.
   - TRANSCRIPT_IVS: ENST123456789_IVS10
   - CANONICAL: canonical transcript_IVS, or '.'
   - BP_NAME: m/e/cBP_chrom_pos_strand_nucleotide
-  - BP_ACC_DIST: distance from BP to acceptor site
+  - BP_ACC_DIST: distance from BP to the acceptor site
   - BP_RANK: rank of BP in this intron
   - BP_TOTAL: total number of BP in this intron
   - BP_HIT: BP position (-2, -1, 0) hit by the variant 
@@ -67,17 +67,17 @@ Parameter | Type | Description | Default
 
 ### Command & Parameters (BPHunter_VCF_batch.py)
 ```
-python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.txt
+python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.csv
 ```
 ```
-python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.txt -g GRCh37 -t all
+python BPHunter_VCF_batch.py -d /dir -s samplelist.txt -o output.csv -g GRCh37 -t all
 ```
 
 Parameter | Type | Description | Default
 ----------|------|-------------|--------------
 *-d*|str|directory of VCF files|N.A.
 *-s*|file|sample list (without .vcf extension) to be screened in the above directory|N.A.
-*-o*|str|output filename|N.A.
+*-o*|str|output CSV filename|N.A.
 *-g*|str|human reference genome assembly (GRCh37 / GRCh38)|GRCh37
 *-t*|str|all / canonical transcripts?|all
 
